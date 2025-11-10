@@ -41,13 +41,13 @@ describe('ReportGenerator (Rede de Segurança)', () => {
       const report = generator.generateReport(
         'HTML',
         adminUser,
-        JSON.parse(JSON.stringify(testItems)), 
+        JSON.parse(JSON.stringify(testItems)),
       );
 
       expect(report).toContain('<h1>Relatório</h1>');
       expect(report).toContain('<h2>Usuário: Admin</h2>');
       // Item Padrão
-      expect(report).toContain('<tr><td>1</td><td>Produto A</td><td>300</td></tr>');
+      expect(report).toContain('<tr ><td>1</td><td>Produto A</td><td>300</td></tr>');
       // Item Prioritário (acima de 1000)
       expect(report).toContain(
         '<tr style="font-weight:bold;"><td>3</td><td>Produto C</td><td>1200</td></tr>',
